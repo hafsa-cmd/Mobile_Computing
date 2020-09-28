@@ -7,22 +7,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.net.CookieHandler;
+
 public class MainActivity extends AppCompatActivity {
-    View viewBg;
-    Button btn;
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        viewBg = (View) findViewById(R.id.view);
-        btn = (Button) findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                viewBg.setBackgroundColor(Color.parseColor("#df80ff"));
-            }
-        });
+        view = this.getWindow().getDecorView();
+
+        view.setBackgroundResource(R.color.colorAccent);
+    }
+
+    public void goDarkPink(View view)
+    {
+        view.setBackgroundResource(R.color.darkPink);
+    }
+
+    public void goBlue(View view) {
+        view.setBackgroundResource(R.color.blue);
+    }
+
+    public void goPink(View view) {
+        view.setBackgroundResource(R.color.Pink);
     }
 }
